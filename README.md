@@ -1,5 +1,7 @@
 # Diapp
 
+English [简体中文](./README_zh-cn.md)
+
 A privacy-focused personal diary application.
 
 ## Features
