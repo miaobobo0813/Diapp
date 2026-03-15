@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Window
+    x:Class="Diapp.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Diapp"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Title="Diapp">
+
+    <Window.SystemBackdrop>
+        <MicaBackdrop />
+    </Window.SystemBackdrop>
+
+    <NavigationView
+            x:Name="NavView"
+            PaneDisplayMode="Auto"
+            IsBackButtonVisible="Collapsed"
+            IsSettingsVisible="False"
+            ItemInvoked="NavView_ItemInvoked">
+        <NavigationView.MenuItems>
+            <NavigationViewItem Content="更改加密密钥" Tag="keyPage">
+                <NavigationViewItem.Icon>
+                    <FontIcon Glyph="&#xE192;"/>
+                </NavigationViewItem.Icon>
+            </NavigationViewItem>
+            <NavigationViewItemSeparator/>
+            <NavigationViewItem Content="新建日记" Icon="Add" Tag="newDiary"/>
+            <NavigationViewItem Content="日记列表" Icon="List" Tag="showAllDiaries"/>
+        </NavigationView.MenuItems>
+        <NavigationView.PaneHeader>
+            <CommandBar>
+                <AppBarButton 
+                    x:Name="LockButton"
+                    Label="锁定"
+                    Click="LockButton_Click"
+                    ToolTipService.ToolTip="清除内存中缓存的密钥。在离开计算机时请进行此操作。">
+                    <AppBarButton.Icon>
+                        <FontIcon Glyph="&#xE72E;"/>
+                    </AppBarButton.Icon>
+                </AppBarButton>
+            </CommandBar>
+        </NavigationView.PaneHeader>
+
+        <NavigationView.Content>
+            <Frame x:Name="ContentFrame"/>
+        </NavigationView.Content>
+    </NavigationView>
+</Window>

@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "Diapp (Package)": {
+      "commandName": "MsixPackage"
+    },
+    "Diapp (Unpackaged)": {
+      "commandName": "Project"
+    }
+  }
+}
